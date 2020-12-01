@@ -1,2 +1,25 @@
 ---
 # tasks file for software
+- name: Ensure install packages
+  apt:
+    update_caches: yes
+    pkg:
+      - maven
+      - git
+
+- name: Ensure upload from git project
+    git:
+      repo: 'https://github.com/boxfuse/boxfuse-sample-java-war-hello.git'
+      dest: /home/ubuntu
+
+- name: Ensure build project
+    shell:
+      mvn package
+    args:
+      chdir: /home/ubuntu
+
+- name: Ensure transfer .war to build
+  synchronize:
+    src: /home/ubuntu/target/hello-1.0.war
+    dest: /var/lib/tomcat9/webapps
+  delegate_to: build
