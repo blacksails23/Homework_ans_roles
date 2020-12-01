@@ -22,4 +22,4 @@
   synchronize:
     src: /home/ubuntu/target/hello-1.0.war
     dest: /var/lib/tomcat9/webapps
-  delegate_to: build
+  delegate_to: 178.154.231.164
