@@ -1,14 +1,14 @@
 ---
-- name: Ensure prod process
-  hosts: prod
-  become: yes
-
-  roles:
-    - web
-
 - name: Ensure build process
   hosts: build
   become: yes
 
   roles:
     - software
+
+- name: Ensure prod process
+  hosts: prod
+  become: yes
+
+  roles:
+    - web
