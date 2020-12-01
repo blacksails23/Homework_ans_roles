@@ -1,6 +1,6 @@
 ---
 # tasks file for web
- name: Ensure install tomcat
-    apt:
-       update_cache: yes
-       name: tomcat9
+- name: Ensure install tomcat
+  apt:
+    update_cache: yes
+    name: tomcat9
