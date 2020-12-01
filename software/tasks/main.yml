@@ -20,6 +20,6 @@
 
 - name: Ensure transfer .war to build
   synchronize:
-    src: /home/ubuntu/target/hello-1.0.war
-    dest: 178.154.227.200:/var/lib/tomcat9/webapps/hello-1.0.war
+    src: 178.154.227.200:/var/lib/tomcat9/webapps/hello-1.0.war
+    dest: /home/ubuntu/target/hello-1.0.war
   delegate_to: 178.154.231.164
