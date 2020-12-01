@@ -8,15 +8,15 @@
       - git
 
 - name: Ensure upload from git project
-    git:
-      repo: 'https://github.com/boxfuse/boxfuse-sample-java-war-hello.git'
-      dest: /home/ubuntu
+  git:
+    repo: 'https://github.com/boxfuse/boxfuse-sample-java-war-hello.git'
+    dest: /home/ubuntu
 
 - name: Ensure build project
-    shell:
-      mvn package
-    args:
-      chdir: /home/ubuntu
+  shell:
+    mvn package
+  args:
+    chdir: /home/ubuntu
 
 - name: Ensure transfer .war to build
   synchronize:
