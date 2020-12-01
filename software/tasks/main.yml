@@ -2,7 +2,7 @@
 # tasks file for software
 - name: Ensure install packages
   apt:
-    update_caches: yes
+    update_cache: yes
     pkg:
       - maven
       - git
